@@ -1,48 +1,21 @@
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+package com.example.demo13;
 
-public class Main {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("layout.fxml"));
+        primaryStage.setTitle("Список сотрудников");
+        primaryStage.setScene(new Scene(root, 400, 300));
+        primaryStage.show();
+    }
+
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Сложение двух чисел");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 200);
-
-        // Текстовые поля для ввода чисел
-        JTextField number1Field = new JTextField(10);
-        JTextField number2Field = new JTextField(10);
-
-        // Кнопка для выполнения сложения
-        JButton addButton = new JButton("Сложить");
-
-        // Метка для отображения результата
-        JLabel resultLabel = new JLabel("Результат: ");
-
-        // Обработка нажатия кнопки
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    double number1 = Double.parseDouble(number1Field.getText());
-                    double number2 = Double.parseDouble(number2Field.getText());
-                    double sum = number1 + number2;
-                    resultLabel.setText("Результат: " + sum);
-                } catch (NumberFormatException ex) {
-                    resultLabel.setText("Пожалуйста, введите корректные числа.");
-                }
-            }
-        });
-
-        // Панель для размещения элементов
-        JPanel panel = new JPanel();
-        panel.add(new JLabel("Число 1:"));
-        panel.add(number1Field);
-        panel.add(new JLabel("Число 2:"));
-        panel.add(number2Field);
-        panel.add(addButton);
-        panel.add(resultLabel);
-
-        frame.getContentPane().add(panel);
-        frame.setVisible(true);
+        launch(args);
     }
 }

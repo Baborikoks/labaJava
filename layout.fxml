@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo13.Controller">
+    <children>
+        <TableView fx:id="tableView" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="370.0">
+            <columns>
+                <TableColumn fx:id="numberColumn" text="Номер" />
+                <TableColumn fx:id="nameColumn" text="ФИО" />
+                <TableColumn fx:id="positionColumn" text="Должность" />
+            </columns>
+        </TableView>
+        <TextField fx:id="nameField" layoutX="14.0" layoutY="220.0" promptText="ФИО" />
+        <TextField fx:id="positionField" layoutX="150.0" layoutY="220.0" promptText="Должность" />
+        <Button fx:id="addButton" layoutX="290.0" layoutY="220.0" text="Добавить" />
+        <Button fx:id="loadButton" layoutX="14.0" layoutY="260.0" text="Загрузить" />
+        <Button fx:id="saveButton" layoutX="150.0" layoutY="260.0" text="Сохранить" />
+    </children>
+</AnchorPane>
