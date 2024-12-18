@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo6.NotepadController">
+    <top>
+        <TextField fx:id="singleLineInput" promptText="Введите текст и нажмите Enter"/>
+    </top>
+    <center>
+        <TextArea fx:id="multiLineInput" wrapText="true" editable="false"/>
+    </center>
+    <bottom>
+        <VBox alignment="CENTER">
+            <Button text="Сохранить" onAction="#handleSave"/>
+            <Button text="Загрузить" onAction="#handleLoad"/>
+        </VBox>
+    </bottom>
+</BorderPane>
