@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.demo5.GreetingController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+
+  <Label text="Выберите поздравителя:" />
+  <RadioButton fx:id="greeter1" onAction="#onGreeterSelected" text="Яндекс" />
+  <RadioButton fx:id="greeter2" onAction="#onGreeterSelected" text="Инновайз" />
+
+  <VBox fx:id="giftOptions" spacing="10" visible="false">
+    <Label fx:id="giftLabel" text="Выберите подарки:" visible="false" />
+  </VBox>
+
+  <Label text="Нужен концерт:" />
+  <HBox spacing="20.0">
+    <RadioButton fx:id="concertYes" text="Да" />
+    <RadioButton fx:id="concertNo" text="Нет" />
+  </HBox>
+
+  <Label text="Вы постоянный клиент:" />
+  <HBox spacing="20.0">
+    <RadioButton fx:id="regularClientYes" text="Да" />
+    <RadioButton fx:id="regularClientNo" text="Нет" />
+  </HBox>
+
+  <Button onAction="#onCalculateButtonClick" text="Рассчитать стоимость" />
+
+  <Label fx:id="resultLabel" text="" visible="false" />
+  <Button fx:id="backButton" onAction="#onBackButtonClick" text="Назад" visible="false" />
+</VBox>
